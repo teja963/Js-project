@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Page</title>
+        <script type="text/javascript">
+        function f1() {
+            var i=document.getElementById("select Box");
+            alert(i.options[i.selectedIndex].value); 
+        }
+
+        function b1() {
+            var i=0;
+            var s1=document.getElementById("text1").value;
+            var s2=document.getElementById("text2").value;
+            if(s1==s2)alert("User name and password must be different");
+            if(s1[i]>='A'&&s1[i]<='Z')alert("valid username");
+            if(s1[i]>='a'&&s1[i]<='z')alert("Invalid username");
+            if(s2.length<6)alert("Invalid password");
+            else{
+                var c=0,s=0,n=0;
+                for(var j=0;j<s2.length;j++){
+                     if(s2[j]>='A'&&s2[j]<='Z')c++;
+                     if(s2[j]>='a'&&s2[j]<='z')s++;
+                     if(s2[j]>='0'&&s2[j]<='9')n++;
+                }
+                if(c<1||s<1||n<1)alert("Invalid Password");
+                else alert("password is Valid");
+            }}
+
+        function p1(){
+            var para=document.getElementsByTagName("p");
+            para[0].style.fontStyle="italic";
+            para[1].style.fontWeight="bold";
+            para[2].style.color="red";
+            para[3].style.fontSize="20";
+
+        }    
+    
+        
+        </script>
+    </head>
+    <body>
+        <h1>This is Username and password</h1>
+        <input id="text1" type="text" placeholder="Username"><br>
+        <input id="text2" type="password" placeholder="Password">
+        <button onclick="b1()">Click Me</button>
+        <h6><u><b>Note:</b></u><br>
+            1.The first letter of the username should be Captial<br>
+            2.password must contain altleast 1capital,1small,1number(0-9)only and size is atleast 6
+            </h6>
+
+        <h1>About Select box </h1>
+       <select id="select Box">
+           <option value="Teja">Teja</option>
+           <option value="Karthik">Karthik</option>
+           <option value="Nikhil">Nikhil</option>
+           <option value="Jogi">Jogi</option>
+       </select>
+       <button onclick="f1()">Click Me</button>
+       <h1>Get ELement by tag name</h1>
+       <p>JavaScript runs on the client side of the web, which can be used to design / program how the web pages behave on the occurrence of an event. JavaScript is an easy to learn and also powerful scripting language, widely used for controlling web page behavior.</p>
+       <p>JavaScript can function as both a procedural and an object oriented language. Objects are created programmatically in JavaScript, by attaching methods and properties to otherwise empty objects at run time, as opposed to the syntactic class definitions common in compiled languages like C++ and Java. Once an object has been constructed it can be used as a blueprint (or prototype) for creating similar objects.</p>
+       <p>The Mozilla project provides two JavaScript implementations. The first ever JavaScript was created by Brendan Eich at Netscape, and has since been updated to conform to ECMA-262 Edition 5 and later versions. This engine, code named SpiderMonkey, is implemented in C/C++. The Rhino engine, created primarily by Norris Boyd (also at Netscape) is a JavaScript implementation written in Java. Like SpiderMonkey, Rhino is ECMA-262 Edition 5 compliant..</p>
+       <p>Each of Mozilla's JavaScript engines expose a public API which application developers can use to integrate JavaScript into their software. By far, the most common host environment for JavaScript is web browsers. Web browsers typically use the public API to create host objects responsible for reflecting the DOM into JavaScript.
+        Another common application for JavaScript is as a (Web) server side scripting language. A JavaScript web server would expose host objects representing a HTTP request and response objects, which could then be manipulated by a JavaScript program to dynamically generate web pages. Node.js is a popular example of this.</p>
+        <button onclick="p1()">Click Me</button>
+
+    </body>
+
+</html>
